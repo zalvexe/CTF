@@ -39,7 +39,7 @@ and.. we got the picture! _(as you might guess.. an anime..)_
 ![chall](https://github.com/ZalfaNafila/HCS-writeup-2023/assets/92864261/e15d354a-b035-4e12-aa88-d3b1b2551d4b)
 
 but humm.. we couldn't find anything in this picture.. so let's see more information about it with exiftool  
-**exiftool (filenem)**
+**exiftool (filename)**
 
 ![exif1](https://github.com/ZalfaNafila/HCS-writeup-2023/assets/92864261/5257a059-a1ed-41dc-afdf-47ffe2fa12f9)
 
