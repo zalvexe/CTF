@@ -16,23 +16,23 @@ so we got a corrupt png file
 
 ![pngcheck](https://github.com/ZalfaNafila/HCS-writeup-2023/assets/92864261/88e7e867-f50f-4d32-9165-e17eac069c22)
 
-well i'm guessing it has something to do with the IHDR/IEND hex chunk? so let's see the hex with Bless
+I'm guessing it has something to do with the IHDR/IEND hex chunk? so let's see the hex with Bless
 
 ![bless1](https://github.com/ZalfaNafila/HCS-writeup-2023/assets/92864261/cdd2a8ff-41a6-4645-9c42-e20ee2148a5d)
 
 hummm that's not a correct hex for PNG signature..  
 based on this website https://asecuritysite.com/forensics/png?file=%2Flog%2Fbasn0g01.png it should be  
- **89 50 4E 47 0D 0A 1A 0A**  
+ ```89 50 4E 47 0D 0A 1A 0A```  
 so let's repair that hex
 
 ![bless2](https://github.com/ZalfaNafila/HCS-writeup-2023/assets/92864261/44c6109d-bf88-40b8-a77a-063e06dbeeef)
 
-well after we saved that file, we still couldn't open it.. so let's try to find another wrong hex  
+well after I saved that file, I still couldn't open it.. so let's try to find another wrong hex  
 
 ![bless4](https://github.com/ZalfaNafila/HCS-writeup-2023/assets/92864261/dfd44c70-08c3-493c-a967-f2a4494105d9)
 
 Hum.. what even is this? a png file ends with "IHCS"? nonono let's change it to IEND hex :
-**49 45 4E 44** 
+```49 45 4E 44```   
 
 and.. we got the picture! _(as you might guess.. an anime..)_
 
@@ -46,7 +46,7 @@ but humm.. we couldn't find anything in this picture.. so let's see more informa
 something caught my attention.. the Comment! it has a hint T***PNG? a PNG tool? well we also got a hint about the image dimension.. so let's try to find that tool  
 > _(after lot of searching.. and lot of trying to change the dimension with its hex but didn't work.. i finally found the tool!)_
  
-it was....  **TweakPNG**!
+it was....  ```TweakPNG```!
 
 so let's install and run the tool
 **Click the "Critical" in Attributes to change the dimension.. also use "Tools" for Image Viewer**
